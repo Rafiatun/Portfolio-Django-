@@ -1,5 +1,4 @@
-from unicodedata import category
-from urllib import request
+
 from django.db import models
 
 # Create your models here.
@@ -27,8 +26,8 @@ class Project(models.Model):
     url=models.URLField()
 
 class Publication(models.Model):
-    paper_name=models.CharField(max_length=10000, null=True, blank=True)
-    place=models.CharField(max_length=10000, null=True, blank=True)
-    date=models.CharField(max_length=10000, null=True, blank=True)
-    paper_url=models.CharField(max_length=10000, null=True, blank=True)
+    paper_name=models.CharField(max_length=1000, null=True, blank=True)
+    place=models.CharField(max_length=1000, null=True, blank=True)
+    date=models.CharField(max_length=1000, null=True, blank=True)
+    paper_url=models.CharField(max_length=1000, null=True, blank=True)
 
