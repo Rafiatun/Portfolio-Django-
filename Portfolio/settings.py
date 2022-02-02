@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost' ,'https://rafiatunlubaba.herokuapp.com/']
 
 
 # Application definition
@@ -68,10 +68,12 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':os.getenv('DATABASE_NAME'),
         'USER':os.getenv('DATABASE_USER'),
         'PASSWORD': os.getenv('DATABASE_PWD'),
+        'HOST': 'localhost',
+        
         
     }
 }
@@ -116,6 +118,7 @@ STATIC_URL = 'static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
+db_from_env= dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())

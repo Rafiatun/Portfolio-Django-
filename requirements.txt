@@ -8,9 +8,13 @@ django-import-export==2.7.1
 et-xmlfile==1.1.0
 gunicorn==20.1.0
 MarkupPy==1.14
+mysql-connector-python==8.0.28
+mysqlclient==2.1.0
 odfpy==1.4.1
 openpyxl==3.0.9
+protobuf==3.19.4
 psycopg2==2.9.3
+PyMySQL==1.0.2
 python-dotenv==0.19.2
 PyYAML==6.0
 sqlparse==0.4.2
